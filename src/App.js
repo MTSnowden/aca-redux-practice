@@ -1,15 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux'
+import store from './store'
 import './App.css';
-import Pics from './components/Pics'
+import PicsContainer from './containers/PicsContainer'
 import CountPics from './components/CountPics'
 
 function App() {
   return (
+    <Provider store={store}>
     <div className="App">
-      <Pics />
+      <PicsContainer />
       <CountPics total="5" />
     </div>
+    </Provider>
   );
 }
 
